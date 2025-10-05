@@ -1,0 +1,210 @@
+/* ======= Home Page Layout ======= */
+.home-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ======= Hero Section (Optional Banner) ======= */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* ======= Movies Section ======= */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.movie-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.movie-card img {
+  width: 90%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin-top: 10px;
+}
+
+.movie-info {
+  padding: 20px;
+}
+
+.movie-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.movie-genre {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.movie-duration {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.movie-rating {
+  background: #f8f9fa;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  color: #495057;
+  display: inline-block;
+}
+
+/* ======= Loading / Error / Empty States ======= */
+.loading,
+.error,
+.no-movies {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #dc3545;
+}
+
+.no-movies {
+  color: #666;
+}
+
+/* ======= Footer Section ======= */
+.footer {
+  background-color: #111;
+  color: #ddd;
+  padding: 40px 20px;
+  margin-top: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-left h3 {
+  color: #ff4757;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.footer-left p {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ff4757;
+}
+
+.footer-right {
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.footer-right p {
+  margin: 5px 0;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .home-container {
+    padding: 10px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    padding: 40px 15px;
+  }
+
+  .footer {
+    padding: 30px 15px;
+  }
+}

@@ -1,0 +1,182 @@
+.checkout {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  padding: 2rem 0;
+}
+
+.checkout-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  color: white;
+}
+
+.checkout h2 {
+  text-align: center;
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.booking-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.show-details,
+.price-breakdown,
+.user-details {
+  background-color: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.show-details h3 {
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.price-breakdown h4,
+.user-details h4 {
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.detail-row .label {
+  color: #cccccc;
+  font-weight: 500;
+}
+
+.detail-row .value {
+  color: white;
+  font-weight: 600;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.price-row.total {
+  border-top: 2px solid #ff6b6b;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff6b6b;
+}
+
+.checkout-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.back-btn,
+.book-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.back-btn {
+  background-color: #666;
+  color: white;
+}
+
+.back-btn:hover:not(:disabled) {
+  background-color: #777;
+}
+
+.book-btn {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.book-btn:hover:not(:disabled) {
+  background-color: #ff5252;
+}
+
+.back-btn:disabled,
+.book-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #ff6b6b;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  background-color: #ff4444;
+  color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .checkout-container {
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+  
+  .checkout h2 {
+    font-size: 1.5rem;
+  }
+  
+  .checkout-actions {
+    flex-direction: column;
+  }
+  
+  .back-btn,
+  .book-btn {
+    width: 100%;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .price-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}

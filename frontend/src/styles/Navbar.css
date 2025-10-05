@@ -1,0 +1,165 @@
+/* ===== GLOBAL NAVBAR BASE ===== */
+.navbar {
+  width: 100%;
+  color: #fff;
+  z-index: 1000;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== TOP NAVBAR ===== */
+.top-navbar {
+  background-color: #1a1a1a;
+  padding: 0.8rem 0;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.top-navbar .navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand (Left) */
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #ff5252;
+}
+
+/* Search bar (Center) */
+.navbar-search {
+  flex: 1;
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0; /* sharp edges */
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.navbar-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  font-size: 1rem;
+}
+
+.navbar-search button {
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-search button:hover {
+  background-color: #ff5252;
+}
+
+/* Right section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-user {
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+.navbar-logout-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-logout-btn:hover {
+  background-color: #ff5252;
+}
+
+/* ===== BOTTOM NAVBAR ===== */
+.bottom-navbar {
+  background-color: #2b2b2b;
+  padding: 0.6rem 0;
+  border-top: 1px solid #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 64px; /* sits below top navbar */
+  z-index: 999;
+}
+
+.bottom-navbar .navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: flex-start; /* left-aligned items */
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-item:hover {
+  background-color: #333333;
+  color: #ff6b6b;
+  border-bottom: 2px solid #ff6b6b;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .top-navbar .navbar-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar-search {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .navbar-right {
+    justify-content: space-between;
+  }
+
+  .bottom-navbar .navbar-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .navbar-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+
