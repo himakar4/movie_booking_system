@@ -89,28 +89,91 @@ The frontend runs at:
 
 ### **Tables Overview**
 
-#### 1. `movies`
-| Column | Type | Description |
-|--------|------|--------------|
-| id | INT (PK) | Unique movie ID |
-| title | VARCHAR | Movie name |
-| duration | VARCHAR | Duration/time |
-| description | TEXT | Movie details |
+### 1. `users`
+Stores all registered users.
 
-#### 2. `shows`
 | Column | Type | Description |
-|--------|------|--------------|
-| id | INT (PK) | Unique show ID |
-| movie_id | INT (FK) | Linked to `movies.id` |
-| show_time | TIME | Show timing |
+|--------|------|-------------|
+| `id` | INT (PK, AUTO_INCREMENT) | Unique user ID |
+| `name` | VARCHAR(100) | User's full name |
+| `email` | VARCHAR(100) | Unique user email |
+| `password` | VARCHAR(255) | Hashed user password |
+| `created_at` | TIMESTAMP | Account creation time |
 
-#### 3. `bookings`
+---
+
+### 2. `cinemas`
+Represents theaters where movies are shown.
+
 | Column | Type | Description |
-|--------|------|--------------|
-| id | INT (PK) | Unique booking ID |
-| show_id | INT (FK) | Linked to `shows.id` |
-| seats | VARCHAR | Comma-separated seat numbers |
-| user | VARCHAR | Name or email of the user |
+|--------|------|-------------|
+| `id` | INT (PK, AUTO_INCREMENT) | Cinema ID |
+| `name` | VARCHAR(100) | Name of the cinema |
+| `location` | VARCHAR(100) | City or area of the cinema |
+
+---
+
+### 3. `movies`
+Contains details about available movies.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `id` | INT (PK, AUTO_INCREMENT) | Movie ID |
+| `title` | VARCHAR(200) | Movie title |
+| `duration` | INT | Duration in minutes |
+| `genre` | VARCHAR(100) | Genre (e.g., Action, Drama) |
+| `rating` | VARCHAR(10) | Certification (U, UA, A) |
+| `release_date` | DATE | Official release date |
+| `actors` | VARCHAR(255) | Comma-separated actor names |
+| `poster` | VARCHAR(255) | Poster image path or URL |
+| `description` | TEXT | Movie summary |
+
+---
+
+### 4. `languages`
+Stores supported languages for movies.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `id` | INT (PK, AUTO_INCREMENT) | Language ID |
+| `name` | VARCHAR(50) | Language name (e.g., English, Hindi) |
+
+---
+
+### 5. `movie_languages`
+Many-to-many relationship between movies and languages.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `movie_id` | INT (FK → movies.id) | Movie ID |
+| `language_id` | INT (FK → languages.id) | Language ID |
+
+Each movie can have multiple languages, and each language can apply to multiple movies.
+
+---
+
+### 6. `shows`
+Represents a movie playing at a specific cinema and time.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `id` | INT (PK, AUTO_INCREMENT) | Show ID |
+| `movie_id` | INT (FK → movies.id) | Linked movie |
+| `cinema_id` | INT (FK → cinemas.id) | Linked cinema |
+| `show_time` | DATETIME | Date and time of the show |
+
+---
+
+### 7. `bookings`
+Tracks which user booked which show and which seats.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `id` | INT (PK, AUTO_INCREMENT) | Booking ID |
+| `user_id` | INT (FK → users.id) | Who made the booking |
+| `show_id` | INT (FK → shows.id) | Which show was booked |
+| `seats` | VARCHAR(255) | Comma-separated seat numbers (e.g., A1,A2,A3) |
+| `booked_at` | TIMESTAMP | Booking creation timestamp |
 
 ---
 
@@ -145,5 +208,8 @@ Movie_Booking_System/
 - Cloud hosting (Render + Vercel + PlanetScale)
 
 ---
-
+<img width="1920" height="1080" alt="Screenshot (157)" src="https://github.com/user-attachments/assets/37ec48e8-1e61-462d-8f83-71b1ffefc270" />
+<img width="1920" height="1080" alt="Screenshot (158)" src="https://github.com/user-attachments/assets/701fd27a-f6e2-4d7f-814a-1dbaef103efd" />
+<img width="1920" height="1080" alt="Screenshot (159)" src="https://github.com/user-attachments/assets/3eba7340-e61d-413a-86f7-235df67e1dde" />
+<img width="1920" height="1080" alt="Screenshot (160)" src="https://github.com/user-attachments/assets/4e21a774-7fd5-4dc3-991c-7b4d3181a0f3" />
 
