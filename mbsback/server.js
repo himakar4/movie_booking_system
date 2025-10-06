@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path'); // <- add this
+const path = require('path'); 
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
@@ -33,8 +33,6 @@ app.use('/api/movies', movieRoutes);
 app.use('/api/shows', showRoutes);
 app.use('/api/bookings', bookingRoutes);
 
-// Serve static posters
-// app.use('/posters', express.static(path.join(__dirname, 'public')));
 
 // Root route
 app.get('/', (req, res) => {
